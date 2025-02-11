@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: wheat;
+}
+h3{
+ font-size: 60px;
+     background: linear-gradient(45deg, #FF6F61, #6A5ACD);
+     color: transparent;
+     background-clip: text;
+}
+.container{
+    margin-top: 20px;
+    display:flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+main{
+    width: 500px;
+    height: 500px;
+}
+.tablero{
+    background-color: palevioletred;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 80%;
+    justify-content: stretch;
+    font-size: 5pc;
+}
+.cuadrado{
+    color: brown;
+    border: 1px solid white;
+    display: flex;
+}
