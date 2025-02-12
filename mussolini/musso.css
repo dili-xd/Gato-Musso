@@ -40,4 +40,29 @@ main{
     color: brown;
     border: 1px solid white;
     display: flex;
+    display: grid ;
+    place-items: center;
+}
+.reiniciar{
+    background-color: pink;
+    border: none;
+    position: relative;    
+    right: 100px;
+    font-size: larger;
+}
+.reiniciar {
+    position: relative;
+    bottom: 30vh;
+    right: 200px;
+    background-color: #6A5ACD;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.reiniciar:hover {
+    background-color: #FF6F61;
 }
