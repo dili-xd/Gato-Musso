@@ -37,7 +37,6 @@ main{
     font-size: 5pc;
 }
 .cuadrado{
-    color: brown;
     border: 1px solid white;
     display: flex;
     display: grid ;
@@ -64,5 +63,5 @@ main{
 }
 
 .reiniciar:hover {
-    background-color: #FF6F61;
+    background-color: palevioletred;
 }

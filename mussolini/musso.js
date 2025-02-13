@@ -9,6 +9,7 @@ const casilla7=document.getElementById("7")
 const casilla8=document.getElementById("8")
 let casillas=[casilla0,casilla1,casilla2,casilla3,casilla4,casilla5,casilla6,casilla7,casilla8]
 let turnojugador=true
+let reiniciar=document.getElementById("reiniciar")
 
 function marcarcasilla(){
     casillas.forEach(casilla=>casilla.addEventListener("click", function(){
@@ -28,5 +29,10 @@ function juegoAleatorio() {
 }
 
 marcarcasilla()
+function reiniciarb(){
+    reiniciar.addEventListener("click",()=>{
+        window.location.reload()
+    })
+}
 
-
+reiniciarb()
