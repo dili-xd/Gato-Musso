@@ -8,7 +8,7 @@ const casilla6 = document.getElementById("6");
 const casilla7 = document.getElementById("7");
 const casilla8 = document.getElementById("8");
 let gameOver= false
-
+let p1 = true
 const contVictoriasCora = document.getElementById("victoriasCora");
 const contVictoriasSol = document.getElementById("victoriasSol");
 
@@ -29,9 +29,9 @@ const posGanadores = [
 
 function marcarcasilla() {
     casillas.forEach(casilla => casilla.addEventListener("click", function () {
+        p1 = true
         if (casilla.innerHTML === "" && !gameOver) {
             casilla.innerHTML = "❤️";
-            detectarGanador(); 
             setTimeout(() => {
                 juegoAleatorio();
             }, 500);
@@ -41,11 +41,12 @@ function marcarcasilla() {
 }
 
 function juegoAleatorio() {
-    if(!gameOver){
+    if(!gameOver && p1){
     let casillasVacias = casillas.filter(vacia => vacia.textContent === "");
     if (casillasVacias.length > 0) {
         let numeroAleatorio = Math.floor(Math.random() * casillasVacias.length);
         casillasVacias[numeroAleatorio].textContent = "☀️";
+        detectarGanador()
     }
     }}
 
@@ -66,22 +67,25 @@ function detectarGanador() {
         let [pos1, pos2, pos3] = posicion;
         if (casillas[pos1].textContent !== "" && casillas[pos1].textContent === casillas[pos2].textContent && casillas[pos1].textContent === casillas[pos3].textContent) {
             if (casillas[pos1].textContent === "❤️") {
-                localStorage.setItem("victoriasCorazon", victoriasCorazon);
-                contVictoriasCora.innerHTML = victoriasCorazon;
-                victoriasCorazon++;
+                let contCoraInt = parseInt(contVictoriasCora.innerHTML)
+                contCoraInt++;
+                console.log("El cora int",contCoraInt);
+                localStorage.setItem("victoriasCorazon", contCoraInt);
+                contVictoriasCora.innerHTML = contCoraInt
                 gameOver = true
                 setTimeout(() => {
                    reiniciarJuego()
                 }, 300);
-                
+                return
             } else if (casillas[pos1].textContent === "☀️") {
+                victoriasS+=1;
                 localStorage.setItem("victoriasSol", victoriasS);
                 contVictoriasSol.innerHTML = victoriasS;
-                victoriasS++;
                 gameOver = true
                 setTimeout(() => {
                     reiniciarJuego()
                  }, 300);
+                 return
             }
         }
     }
@@ -90,6 +94,7 @@ function detectarGanador() {
 function reiniciarJuego() {
     casillas.forEach(casilla => casilla.innerHTML = "");
     gameOver = false
+    p1=false
     marcarcasilla() 
 }
 
