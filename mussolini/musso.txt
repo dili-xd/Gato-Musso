@@ -1,0 +1,13 @@
+Este proyecto es un juego estilo Tic-Tac-Toe hecho con HTML, CSS y JavaScript  tambien con el caracteristico 
+nombre "Mussolini" es dedicado y en creatividad a mi gata, la gata mas linda y hermosa de este planeta
+(te amo amo musso), donde dos jugadores, Cora (❤️) y Sol (☀️), toman turnos para marcar una casilla en una
+cuadrícula de 3x3. El juego verifica si algún jugador ha ganado al completar una línea, columna o diagonal.
+Los contadores de victorias se actualizan y se guardan en el almacenamiento local, lo que permite que el puntaje 
+se conserve incluso después de recargar la página.
+El diseño visual utiliza un fondo color wheat, un título con un gradiente de colores rosa y morado, y una cuadrícula 
+centrada con bordes blancos. El botón de reinicio tiene un fondo morado que se convierte en rosa al pasar el 
+cursor por encima, y al hacer clic, reinicia el tablero y el puntaje. La lógica del juego está manejada con
+JavaScript: los jugadores alternan turnos para marcar las casillas, y el juego también permite a Sol hacer
+movimientos aleatorios en las casillas vacías. Además, se incluye la opción de reiniciar el juego, lo que 
+borra el tablero y restablece el puntaje. El almacenamiento local asegura que las victorias de cada jugador 
+se mantengan entre sesiones, permitiendo una experiencia continua de juego.
